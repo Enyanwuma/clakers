@@ -11,6 +11,11 @@ body {
     color: white;
 	 background-size: cover;
 }
+.container {
+    width: 90%; /* Instead of width: 600px */
+    max-width: 1200px; /* Optional max limit */
+    margin: auto;
+}
 
 nav {
     display: flex;
