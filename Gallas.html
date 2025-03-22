@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Gallery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <style>
+        /* General Styling */
+        body {
+            background: radial-gradient(circle, #0d0d0d, #000000);
+            color: white;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .gallery-container {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
+        }
+
+        .swiper {
+            width: 100%;
+            height: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            transform: perspective(800px) rotateY(10deg);
+            transition: transform 1s ease-in-out;
+        }
+
+        .swiper:hover {
+            transform: perspective(800px) rotateY(-10deg);
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .swiper-slide img, .swiper-slide video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* Impossible Floating Link */
+        .message-link {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            background: linear-gradient(45deg, rgba(0, 255, 255, 0.7), rgba(255, 0, 255, 0.7));
+            color: white;
+            padding: 10px 15px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-shadow: 0 0 10px white;
+            animation: floating 2s infinite ease-in-out;
+        }
+
+        @keyframes floating {
+            0% { transform: translate(-50%, 0); }
+            50% { transform: translate(-50%, -10px); }
+            100% { transform: translate(-50%, 0); }
+        }
+
+        /* Animated Navigation Arrows */
+        .swiper-button-next, .swiper-button-prev {
+            color: white;
+            transition: transform 0.3s ease-in-out, filter 0.3s;
+        }
+
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            transform: scale(1.2) rotate(10deg);
+            filter: drop-shadow(0 0 10px cyan);
+        }
+
+        /* Holographic Pagination */
+        .swiper-pagination-bullet {
+            background: linear-gradient(45deg, cyan, magenta);
+            width: 12px;
+            height: 12px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .swiper-pagination-bullet-active {
+            transform: scale(1.5);
+            box-shadow: 0 0 10px cyan;
+        }
+
+        /* Cyberpunk Video Controls */
+        .video-controls {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .swiper-slide:hover .video-controls {
+            opacity: 1;
+            transform: translate(-50%, -60%);
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, cyan, magenta);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .control-btn:hover {
+            transform: scale(1.2) rotate(360deg);
+        }
+
+        .control-btn i {
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-shadow: 0 0 10px cyan;">🚀 fly high dont lay low</h2>
+
+    <div class="gallery-container">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Video Slide with Animated Controls -->
+                <div class="swiper-slide">
+                    <video id="video1" autoplay muted loop>
+                        <source src="your-edit-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://yourlink.com/video1" class="message-link" target="_blank">Watch Full Video</a>
+                    
+                    <div class="video-controls">
+                        <button class="control-btn" onclick="togglePlayPause('video1')">
+                            <i id="play-icon-video1">⏸</i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Image Slide -->
+                <div class="swiper-slide">
+                    <img src="your-wallpaper.jpg" alt="Wallpaper">
+                    <a href="https://yourlink.com/wallpaper1" class="message-link" target="_blank">Download Wallpaper</a>
+                </div>
+
+                <!-- Another Video Slide -->
+                <div class="swiper-slide">
+                    <video id="video2" autoplay muted loop>
+                        <source src="your-edit-video2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://yourlink.com/video2" class="message-link" target="_blank">Watch Another Edit</a>
+
+                    <div class="video-controls">
+                        <button class="control-btn" onclick="togglePlayPause('video2')">
+                            <i id="play-icon-video2">⏸</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation and Pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+        });
+
+        // Video Play/Pause Function
+        function togglePlayPause(videoId) {
+            let video = document.getElementById(videoId);
+            let icon = document.getElementById('play-icon-' + videoId);
+            if (video.paused) {
+                video.play();
+                icon.textContent = "⏸";
+            } else {
+                video.pause();
+                icon.textContent = "▶";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Notification ethical hackers in 10 m radius</title>
+    <style>
+        /* General Styling */
+        body {
+            background: #0a0a0a;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            background: url(images/6.jpg) no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+
+        }
+
+        /* 3D Spinning Image */
+        .image-container {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .spinning-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+            transition: transform 1s ease-in-out;
+            animation: spin 5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        /* Hover Effects */
+        .image-container:hover .spinning-image {
+            animation-play-state: paused;
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.9);
+        }
+
+        /* Option Notification */
+        .info-box {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: cyan;
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px cyan;
+            font-size: 14px;
+            display: none;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .show-info {
+            display: block;
+            opacity: 1;
+            transform: translateX(-50%) translateY(-10px);
+        }
+
+        /* Button Styling */
+        .info-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, cyan, magenta);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+        }
+
+        .info-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px cyan;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>🌌 GOJO SATURU 🌌</h2>
+
+    <div class="image-container">
+        <img src="images/2.jpg" alt="Spinning Image" class="spinning-image">
+        <div id="infoBox" class="info-box">A special grade soccero born into a noble family with the six eyes for his generation considered the strongest with his abilities he leads jujtusu high with his expertise</div>
+    </div>
+
+    <button class="info-button" onclick="toggleInfo()">Show</button>
+
+    <script>
+        function toggleInfo() {
+            let infoBox = document.getElementById("infoBox");
+            infoBox.classList.toggle("show-info");
+        }
+    </script>
+
+</body>
+</html>

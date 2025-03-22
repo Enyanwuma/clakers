@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realistic Laughing Emoji</title>
+    <style>
+        /* Page Styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ffec41;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Emoji Face */
+        .emoji {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background: #FFD700;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: laugh-bounce 0.5s infinite alternate ease-in-out;
+        }
+
+        /* Laughing Movement */
+        @keyframes laugh-bounce {
+            0% { transform: rotate(5deg) translateY(2px) scale(1); }
+            100% { transform: rotate(-5deg) translateY(-2px) scale(1.1); }
+        }
+
+        /* Eyes */
+        .eye {
+            position: absolute;
+            top: 40px;
+            width: 20px;
+            height: 15px;
+            background: black;
+            border-radius: 50%;
+        }
+
+        .eye.left { left: 40px; }
+        .eye.right { right: 40px; }
+
+        /* Mouth */
+        .mouth {
+            position: absolute;
+            bottom: 30px;
+            width: 70px;
+            height: 40px;
+            background: black;
+            border-radius: 0 0 50px 50px;
+            overflow: hidden;
+            animation: mouth-expand 0.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes mouth-expand {
+            0% { height: 30px; }
+            100% { height: 50px; }
+        }
+
+        /* Teeth */
+        .teeth {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 15px;
+            background: white;
+        }
+
+        /* Tears */
+        .tear {
+            position: absolute;
+            width: 12px;
+            height: 20px;
+            background: cyan;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: tear-drop 1s infinite ease-in-out;
+        }
+
+        .tear.left {
+            top: 50px;
+            left: 25px;
+            animation-delay: 0.2s;
+        }
+
+        .tear.right {
+            top: 50px;
+            right: 25px;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes tear-drop {
+            0% { transform: translateY(0) scaleY(1); opacity: 1; }
+            100% { transform: translateY(30px) scaleY(1.2); opacity: 0; }
+        }
+        
+        /* Sound Button */
+        .sound-btn {
+            position: absolute;
+            bottom: 20px;
+            padding: 10px 20px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="emoji">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="mouth">
+            <div class="teeth"></div>
+        </div>
+        <div class="tear left"></div>
+        <div class="tear right"></div>
+    </div>
+
+    <button class="sound-btn" onclick="playLaugh()">😂 Play Laugh 😂</button>
+
+    <script>
+        function playLaugh() {
+            let laughSound = new Audio('https://www.fesliyanstudios.com/play-mp3/438');
+            laughSound.play();
+        }
+    </script>
+
+</body>
+</html>

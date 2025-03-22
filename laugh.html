@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laughing Emoji Animation</title>
+    <style>
+        /* Centering the Emoji */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #fce703;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .emoji-container {
+            position: relative;
+            font-size: 100px;
+            animation: laugh 0.5s infinite alternate ease-in-out;
+        }
+
+        /* Laughing Shake Animation */
+        @keyframes laugh {
+            0% { transform: rotate(5deg) translateY(2px); }
+            100% { transform: rotate(-5deg) translateY(-2px); }
+        }
+
+        /* Tears Animation */
+        .tear {
+            position: absolute;
+            width: 12px;
+            height: 20px;
+            background: cyan;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: tear-drop 1s infinite ease-in-out;
+        }
+
+        .tear.left {
+            top: 30px;
+            left: 20px;
+            animation-delay: 0.2s;
+        }
+
+        .tear.right {
+            top: 30px;
+            right: 20px;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes tear-drop {
+            0% { transform: translateY(0) scaleY(1); opacity: 1; }
+            100% { transform: translateY(20px) scaleY(1.2); opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="emoji-container">
+        😂
+        <div class="tear left"></div>
+        <div class="tear right"></div>
+    </div>
+
+</body>
+</html>
