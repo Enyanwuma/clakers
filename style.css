@@ -35,7 +35,7 @@ nav .logo {
 nav .nav-links {
     list-style: none;
     display: absolute;
-    gap: 10px;
+    gap: 3px;
 }
 
 nav .nav-links li {
@@ -58,7 +58,83 @@ nav .nav-links a:hover {
     border-radius: 55px;
     font-size: 16px;
     font-weight: 600;
+    padding: 11px 30px;
+    background-color: #fff;
+    margin:0;
+    margin-left:0px;
+    transition: transform 1s;
+}
+a .button1{
+    text-decoration: none;
+    color: rgb(255, 187, 0);
+}
+.button1:hover{
+    transform: translateX(-10px) ;
+}
+.button2{
+    border: none;
+    outline: none;
+    border-radius: 55px;* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+
+background: linear-gradient(135deg, #ff4747, #ecac23);
+	
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+	 background-size: cover;
+}
+
+nav {
+    display: absolute;
+    align-items: left;
+    background: linear-gradient(135deg, #ff4747, #ecac23);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	
+}
+
+nav .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: fantasy;
+    color: #fff4e7;
+    font-style:italic ;
+    text-align: center;
+}
+
+
+nav .nav-links {
+    list-style: none;
+    display: absolute;
+    gap: 3px;
+}
+
+nav .nav-links li {
+    text-transform: uppercase;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: #b46913;
+}
+.button1{
+    border: rgb(180, 114, 13)1px solid;
+    outline: none;
+    border-radius: 55px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 11px 30px;
     background-color: #fff;
     margin:0;
     margin-left:0px;
@@ -75,6 +151,121 @@ a .button1{
     border: none;
     outline: none;
     border-radius: 55px;
+    font-size: 16px;
+    padding: 11px 30px;
+    background-color: rgb(255, 145, 0);
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0;
+    transition: transform 1s;
+}
+a .button2{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+.button2:hover{
+    transform: translateX(10px);
+}
+.connect{
+    transition: 0.5s;
+    color: rgb(0, 47, 255);
+}
+.connect:hover{
+    -webkit-text-stroke: 2px rgb(0, 47, 255);
+    color: transparent;
+}
+
+.home-section {
+    height: 100vh;
+    background: url('yo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    animation: moveBackground 60s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.cta-button:hover {
+    background-color: #6a5acd;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+}
+
+/* Gallery Styles */
+.gallery-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: #ff6347;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #6a5acd;
+}
+@media (min-aspect-ratio: 16/9)
+{
+    .back{
+        width: 100%;
+        height: auto;
+    }
+}
+@media srceen and (max-width: 800px) and (min-width: 400px)
+{
+    .div2 h1{
+        font-size: 70px;
+    }
+    
+}
+@media screen and (max-width: 600px)
+{
+    
+}
+
     font-size: 16px;
     padding: 11px 30px;
     background-color: rgb(255, 145, 0);
