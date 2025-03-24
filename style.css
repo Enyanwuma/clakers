@@ -5,23 +5,19 @@
 }
 
 body {
- background: url(images/6.jpg) no-repeat center center fixed;
+
+    background: url(images/yo.jpg) no-repeat center center fixed;
     font-family: Arial, sans-serif;
     background-color: #1a1a1a;
     color: white;
 	 background-size: cover;
 }
-.container {
-    width: 90%; /* Instead of width: 600px */
-    max-width: 1200px; /* Optional max limit */
-    margin: auto;
-}
 
 nav {
-    display: flex;
+    display: absolute;
     justify-content: space-between;
-    align-items: right;
-    background: linear-gradient(135deg, #ff6347, #6a5acd);
+    align-items: left;
+    background: linear-gradient(135deg, #ff4747, #ecac23);
     padding: 10px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 	
@@ -30,7 +26,12 @@ nav {
 nav .logo {
     font-size: 2rem;
     font-weight: bold;
+    font-family: fantasy;
+    color: #fff4e7;
+    font-style:italic ;
+    text-align: center;
 }
+
 
 nav .nav-links {
     list-style: none;
@@ -50,10 +51,10 @@ nav .nav-links a {
 }
 
 nav .nav-links a:hover {
-    color: #6a5acd;
+    color: #b46913;
 }
 .button1{
-    border: rgb(0, 47, 255)1px solid;
+    border: rgb(180, 114, 13)1px solid;
     outline: none;
     border-radius: 55px;
     font-size: 16px;
@@ -66,7 +67,7 @@ nav .nav-links a:hover {
 }
 a .button1{
     text-decoration: none;
-    color: rgb(0, 47, 255);
+    color: rgb(255, 187, 0);
 }
 .button1:hover{
     transform: translateX(-10px) ;
@@ -77,7 +78,7 @@ a .button1{
     border-radius: 55px;
     font-size: 16px;
     padding: 11px 30px;
-    background-color: rgb(0, 47, 255);
+    background-color: rgb(255, 145, 0);
     font-weight: 600;
     text-decoration: none;
     margin: 0;
@@ -102,7 +103,7 @@ a .button2{
 
 .home-section {
     height: 100vh;
-    background: url(yo.jpg) no-repeat center center fixed;
+    background: url('yo.jpg') no-repeat center center fixed;
     background-size: cover;
     animation: moveBackground 60s linear infinite;
     display: flex;
@@ -170,4 +171,22 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #6a5acd;
+}
+@media (min-aspect-ratio: 16/9)
+{
+    .back{
+        width: 100%;
+        height: auto;
+    }
+}
+@media srceen and (max-width: 800px) and (min-width: 400px)
+{
+    .div2 h1{
+        font-size: 70px;
+    }
+    
+}
+@media screen and (max-width: 600px)
+{
+    
 }
