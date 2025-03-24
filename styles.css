@@ -10,25 +10,20 @@
 
 body {
 
-    font-family: Forte, sans-serif;
+    background: url(images/6.jpg) no-repeat center center fixed;
+    font-family: Arial, sans-serif;
     background-color: #1a1a1a;
     color: white;
-	    height: 100vh;
-    background: url(images/6.jpg) no-repeat center center fixed;
-    background-size: cover;
-
-
-    justify-content: center;
-
+	 background-size: cover;
 
 }
 
 
 nav {
-    display: flex;
+    display: absolute;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #ff6347, #6a5acd);
+    background: linear-gradient(135deg, #ff4747, #ecac23);
     padding: 10px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -36,6 +31,10 @@ nav {
 nav .logo {
     font-size: 2rem;
     font-weight: bold;
+    font-family: fantasy;
+    color: #fff4e7;
+    font-style:italic ;
+    text-align: center;
 }
 
 nav .nav-links {
@@ -56,10 +55,10 @@ nav .nav-links a {
 }
 
 nav .nav-links a:hover {
-    color: #6a5acd;
+    color: #eca31b;
 }
 .button1{
-    border: rgb(0, 47, 255)1px solid;
+    border: rgb(255, 102, 0)1px solid;
     outline: none;
     border-radius: 55px;
     font-size: 16px;
@@ -67,12 +66,12 @@ nav .nav-links a:hover {
     padding: 11px 30px;
     background-color: #fff;
     margin: 1px 3px;
-    margin-left: 220px;
+    margin-left:0;
     transition: transform 1s;
 }
 a .button1{
     text-decoration: none;
-    color: rgb(0, 47, 255);
+    color: rgb(255, 115, 0);
 }
 .button1:hover{
     transform: translateX(-10px) ;
@@ -83,7 +82,7 @@ a .button1{
     border-radius: 55px;
     font-size: 16px;
     padding: 11px 30px;
-    background-color: rgb(0, 47, 255);
+    background-color: rgb(255, 153, 0);
     font-weight: 600;
     text-decoration: none;
     margin: 1px 3px;
@@ -121,6 +120,130 @@ a .button2{
 @keyframes moveBackground {
     0% { background-position: 0 0; }
     100% { background-position: 100% 100%; }
+}
+.gallery-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
+}
+
+.swiper {
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transform: perspective(800px) rotateY(10deg);
+    transition: transform 1s ease-in-out;
+}
+
+.swiper:hover {
+    transform: perspective(800px) rotateY(-10deg);
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.swiper-slide img, .swiper-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Impossible Floating Link */
+.message-link {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.7), rgba(255, 0, 255, 0.7));
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 0 10px white;
+    animation: floating 2s infinite ease-in-out;
+}
+
+@keyframes floating {
+    0% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -10px); }
+    100% { transform: translate(-50%, 0); }
+}
+
+/* Animated Navigation Arrows */
+.swiper-button-next, .swiper-button-prev {
+    color: white;
+    transition: transform 0.3s ease-in-out, filter 0.3s;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 0 10px cyan);
+}
+
+/* Holographic Pagination */
+.swiper-pagination-bullet {
+    background: linear-gradient(45deg, cyan, magenta);
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+    transform: scale(1.5);
+    box-shadow: 0 0 10px cyan;
+}
+
+/* Cyberpunk Video Controls */
+.video-controls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.swiper-slide:hover .video-controls {
+    opacity: 1;
+    transform: translate(-50%, -60%);
+}
+
+.control-btn {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, cyan, magenta);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    transition: transform 0.3s ease-in-out;
+}
+
+.control-btn:hover {
+    transform: scale(1.2) rotate(360deg);
+}
+
+.control-btn i {
+    color: white;
+    font-size: 20px;
 }
 .div1{
     width: 100%;
@@ -220,4 +343,8 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #6a5acd;
+}
+@media screen and (max-width: 600px)
+{
+    
 }
